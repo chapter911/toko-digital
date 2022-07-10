@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:toko_digital/page/detailprodukpage.dart';
 import 'package:toko_digital/page/informationpage.dart';
+import 'package:toko_digital/page/keranjangpage.dart';
+import 'package:toko_digital/page/promopage.dart';
 
 class DashboardPage extends StatefulWidget {
   const DashboardPage({Key? key}) : super(key: key);
@@ -112,7 +114,9 @@ class _DashboardPageState extends State<DashboardPage> {
           Container(
             margin: const EdgeInsets.only(left: 10, right: 10),
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Get.to(() => const PromoPage());
+              },
               child: Row(
                 children: const [
                   Icon(
@@ -305,33 +309,38 @@ class _DashboardPageState extends State<DashboardPage> {
                 ),
                 Flexible(
                   flex: 1,
-                  child: Container(
-                    padding: const EdgeInsets.all(10),
-                    color: Colors.grey,
-                    child: Center(
-                      child: Row(
-                        children: const [
-                          Icon(
-                            Icons.shop,
-                            color: Colors.orange,
-                          ),
-                          SizedBox(
-                            width: 10,
-                          ),
-                          Text(
-                            "Anda Mempunyai Keranjang",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
+                  child: InkWell(
+                    onTap: () {
+                      Get.to(() => const KeranjangPage());
+                    },
+                    child: Container(
+                      padding: const EdgeInsets.all(10),
+                      color: Colors.grey,
+                      child: Center(
+                        child: Row(
+                          children: const [
+                            Icon(
+                              Icons.shop,
+                              color: Colors.orange,
                             ),
-                          ),
-                          Expanded(
-                            child: Align(
-                              alignment: Alignment.centerRight,
-                              child: Icon(Icons.chevron_right),
+                            SizedBox(
+                              width: 10,
                             ),
-                          ),
-                        ],
+                            Text(
+                              "Anda Mempunyai Keranjang",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            Expanded(
+                              child: Align(
+                                alignment: Alignment.centerRight,
+                                child: Icon(Icons.chevron_right),
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
@@ -394,7 +403,9 @@ class _DashboardPageState extends State<DashboardPage> {
                 color: Colors.red,
               ),
               title: const Text('Belanja'),
-              onTap: () {},
+              onTap: () {
+                Get.to(() => const KeranjangPage());
+              },
             ),
             ListTile(
               tileColor: Colors.red,

@@ -153,7 +153,7 @@ class _MembershipPageState extends State<MembershipPage> {
         ),
         titlePadding: const EdgeInsets.all(0),
         content: Text(
-            "Informasi Syarat $member\n-Follow Sosial Media\n- Belanja minimal $harga"),
+            "Informasi Syarat $member\n- Follow Sosial Media\n- Belanja minimal $harga"),
         actions: [
           ElevatedButton(
             onPressed: () {
